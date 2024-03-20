@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 export default function ChimericPoesy({ children }){
   return (
     <div>
+
       <CenteredText>
+          <h1>Chimeric Poesy</h1>
+          <h6>we(l|b)(e)come(well...)</h6>
           <Author 
             name={"li jacobsyn"}
             poesies={[
@@ -20,6 +23,16 @@ export default function ChimericPoesy({ children }){
                 path: "hashtag",
                 name: "hashtag"
               }
+            ]}
+          />
+
+          <Author 
+            name={"bogscary"}
+            poesies={[
+              {
+                path: "https://www.instagram.com/reel/C4qD0u7rMFu/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==",
+                name: "saboteurcity",
+              },
             ]}
           />
 
