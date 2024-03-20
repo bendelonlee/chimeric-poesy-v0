@@ -9,7 +9,7 @@ export default function Qomolangma() {
   // console.log(searchParams.get("annotate"));
   return (
     <div
-      className="poesy-container"
+      className="q-poesy-container"
       style={{
         paddingTop: "80px",
         display: "grid",

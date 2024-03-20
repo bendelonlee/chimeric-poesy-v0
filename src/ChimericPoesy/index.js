@@ -15,6 +15,10 @@ export default function ChimericPoesy({ children }){
               {
                 path: "qomolangma",
                 name: "qomolangma"
+              },
+              {
+                path: "hashtag",
+                name: "hashtag"
               }
             ]}
           />

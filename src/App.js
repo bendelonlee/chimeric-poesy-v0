@@ -3,6 +3,7 @@ import Home from "./Home.js"
 import ChimericPoesy from "./ChimericPoesy"
 import WombEnvy from "./ChimericPoesy/WombEnvy"
 import Qomolangma from "./ChimericPoesy/Qomolangma"
+import Hashtag from "./ChimericPoesy/Hashtag"
 import "./App.css"
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
           <Route index element={<ChimericPoesy/> }/>
           <Route path="womb-envy" element={<WombEnvy/>}/>
           <Route path="qomolangma" element={<Qomolangma/>}/>
+          <Route path="Hashtag" element={<Hashtag/>}/>
           <Route path="*" element={<div>not found</div> }/>
         </Route>
         <Route path="*" element={<div>not found</div> }/>
