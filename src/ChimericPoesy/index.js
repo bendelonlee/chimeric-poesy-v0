@@ -5,7 +5,13 @@ export default function ChimericPoesy({ children }){
   return (
     <div>
       <CenteredText>
-          <Author name={"li jacobsyn"}/>
+          <Author 
+            name={"li jacobsyn"}
+            poesies={[{
+              path: "womb-envy",
+              name: "womb envy",
+            }]}
+          />
 
       </CenteredText>
     </div>
@@ -13,7 +19,7 @@ export default function ChimericPoesy({ children }){
 };
 
 
-function Author({name}){
+function Author({name, poesies}){
   const listStyles = {
     display: "flex",
     flexDirection: "column",
@@ -23,9 +29,10 @@ function Author({name}){
       <div>
         <h2>poesy by {name}</h2>
           <div style={listStyles} >
-            <Link to="womb-envy">womb envy</Link>
-            <Link>qomolangma</Link>      
-            <Link>hashtag</Link>          
+            {poesies.map((poesy, i) => {
+              return <Link key={poesy.path} to={poesy.path}>{poesy.name}</Link>
+            })}
+
           </div>
       </div>
     )
