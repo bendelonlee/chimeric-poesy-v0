@@ -30,9 +30,8 @@ function Author({name, poesies}){
         <h2>poesy by {name}</h2>
           <div style={listStyles} >
             {poesies.map((poesy, i) => {
-              return <Link key={poesy.path} to={poesy.path}>{poesy.name}</Link>
+              return <Link key={poesy.path} to={poesy.path}>{i}. {poesy.name}</Link>
             })}
-
           </div>
       </div>
     )
