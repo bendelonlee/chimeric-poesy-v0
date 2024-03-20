@@ -7,10 +7,16 @@ export default function ChimericPoesy({ children }){
       <CenteredText>
           <Author 
             name={"li jacobsyn"}
-            poesies={[{
-              path: "womb-envy",
-              name: "womb envy",
-            }]}
+            poesies={[
+              {
+                path: "womb-envy",
+                name: "womb envy",
+              },
+              {
+                path: "qomolangma",
+                name: "qomolangma"
+              }
+            ]}
           />
 
       </CenteredText>
