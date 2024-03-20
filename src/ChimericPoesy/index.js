@@ -1,4 +1,5 @@
 import CenteredText from "../CenteredText"
+import { Link } from "react-router-dom";
 
 export default function ChimericPoesy({ children }){
   return (
@@ -19,14 +20,14 @@ function Author({name}){
   }
 
   return (
-  <div styles={listStyles}>
-    <h2>poesy by {name}</h2>
       <div>
-        <a>womb envy</a>
-        <a>qomolangma</a>      
-        <a>hashtag</a>          
+        <h2>poesy by {name}</h2>
+          <div style={listStyles} >
+            <Link to="womb-envy">womb envy</Link>
+            <Link>qomolangma</Link>      
+            <Link>hashtag</Link>          
+          </div>
       </div>
-  </div>
     )
 
 

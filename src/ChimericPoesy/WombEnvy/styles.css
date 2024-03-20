@@ -1,0 +1,25 @@
+div.poesy-container {
+  font-family: monospace;
+  text-align: center;
+}
+
+.fading-text-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.fading-text {
+  font-size: 32px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+
+.fading-text.active {
+  opacity: 1;
+}
