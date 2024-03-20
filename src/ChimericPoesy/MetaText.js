@@ -10,7 +10,6 @@ const MetaText = ({ texts, interval, isRepeating = true }) => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentIndex((prevIndex) => {
-        // console.log(prevIndex);
         if (prevIndex >= texts.length - 1) {
           if(isRepeating){
             return 0;
@@ -24,7 +23,7 @@ const MetaText = ({ texts, interval, isRepeating = true }) => {
     }, interval);
 
     return () => clearInterval(intervalId);
-  }, [texts, interval]);
+  }, [texts, interval, isRepeating]);
 
   return (
     <div className="fading-text-container">
