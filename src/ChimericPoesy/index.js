@@ -1,7 +1,9 @@
 import CenteredText from "../CenteredText"
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 export default function ChimericPoesy({ children }){
+  const [searchParams, setSearchParams] = useSearchParams();
+
   return (
     <div>
       
@@ -24,8 +26,12 @@ export default function ChimericPoesy({ children }){
                 name: "unwritten yet(i(am(willing(to(work(this(ha(za)rd)))))))"
               },
               {
+                onClick: () => {
+                  console.log('ran')
+                  setSearchParams({"carryBogs": "youBet"})
+                },
                 path: "",
-                name: "a collaboration (a broken link)"
+                name: "unwritten still((budd(ha(y)))ing)"
               },
               {
                 path: "hashtag",
@@ -34,7 +40,7 @@ export default function ChimericPoesy({ children }){
             ]}
           />
 
-          <Author 
+          {searchParams.get("carryBogs") && <Author 
             name={"bogscary"}
             poesies={[
               {
@@ -42,9 +48,9 @@ export default function ChimericPoesy({ children }){
                 name: "saboteurcity",
               },
             ]}
-          />
+          />}
 
-          <Author 
+          {/* <Author 
             name={"william t hazard"}
             poesies={[
               {
@@ -52,7 +58,7 @@ export default function ChimericPoesy({ children }){
                 name: "the living debt",
               },
             ]}
-          />
+          /> */}
 
       </CenteredText>
     </div>
@@ -76,7 +82,7 @@ function Author({name, poesies}){
         <h2>poesy by {name}</h2>
           <div style={listStyles} >
             {poesies.map((poesy, i) => {
-              return <Link style={linkStyles}key={poesy.path} to={poesy.path}>{i}. {poesy.name}</Link>
+              return <Link style={linkStyles}key={poesy.name} onClick={poesy.onClick} to={poesy.path}>{i}. {poesy.name}</Link>
             })}
           </div>
       </div>
