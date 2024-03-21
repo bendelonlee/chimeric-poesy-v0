@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 export default function ChimericPoesy({ children }){
   return (
     <div>
-
+      
       <CenteredText>
           <h1>Chimeric Poesy</h1>
-          <h6>we(l|b)(e)come(well...)</h6>
+          <h6>we(l|b)(e)come((2)well...)</h6>
           <Author 
             name={"li jacobsyn"}
             poesies={[
@@ -18,6 +18,14 @@ export default function ChimericPoesy({ children }){
               {
                 path: "qomolangma",
                 name: "qomolangma"
+              },
+              {
+                path: "",
+                name: "unwritten yet(i(am(willing(to(work(this(ha(za)rd)))))))"
+              },
+              {
+                path: "",
+                name: "a collaboration (a broken link)"
               },
               {
                 path: "hashtag",
@@ -36,6 +44,16 @@ export default function ChimericPoesy({ children }){
             ]}
           />
 
+          <Author 
+            name={"william t hazard"}
+            poesies={[
+              {
+                path: "https://gifrenga.co/",
+                name: "the living debt",
+              },
+            ]}
+          />
+
       </CenteredText>
     </div>
   );
@@ -47,13 +65,18 @@ function Author({name, poesies}){
     display: "flex",
     flexDirection: "column",
   }
+  const linkStyles = {
+    padding: "9px",
+  }
+  
+
 
   return (
       <div>
         <h2>poesy by {name}</h2>
           <div style={listStyles} >
             {poesies.map((poesy, i) => {
-              return <Link key={poesy.path} to={poesy.path}>{i}. {poesy.name}</Link>
+              return <Link style={linkStyles}key={poesy.path} to={poesy.path}>{i}. {poesy.name}</Link>
             })}
           </div>
       </div>
