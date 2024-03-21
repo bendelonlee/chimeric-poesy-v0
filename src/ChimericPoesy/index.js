@@ -22,18 +22,6 @@ export default function ChimericPoesy({ children }){
                 name: "qomolangma"
               },
               {
-                path: "",
-                name: "unwritten yet(i(am(willing(to(work(this(ha(za)rd)))))))"
-              },
-              {
-                onClick: () => {
-                  console.log('ran')
-                  setSearchParams({"carryBogs": "youBet"})
-                },
-                path: "",
-                name: "unwritten still((budd(ha(y)))ing)"
-              },
-              {
                 path: "hashtag",
                 name: "hashtag"
               }
@@ -46,6 +34,10 @@ export default function ChimericPoesy({ children }){
               {
                 path: "https://www.instagram.com/reel/C4qD0u7rMFu/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==",
                 name: "saboteurcity",
+              },
+              {
+                path: "https://www.instagram.com/reel/C4vfJyPMoC4/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+                name: "newsjobant",
               },
             ]}
           />}
