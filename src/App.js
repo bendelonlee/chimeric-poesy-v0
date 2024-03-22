@@ -3,6 +3,7 @@ import ChimericPoesy from "./ChimericPoesy"
 import WombEnvy from "./ChimericPoesy/WombEnvy"
 import Qomolangma from "./ChimericPoesy/Qomolangma"
 import Hashtag from "./ChimericPoesy/Hashtag"
+import Header from "./Header"
 import "./App.css"
 
 export default function App() {
@@ -10,12 +11,34 @@ export default function App() {
     <BrowserRouter>
       <Routes>
           <Route index element={<ChimericPoesy/> }/>
-          <Route path="womb-envy" element={<WombEnvy/>}/>
-          <Route path="qomolangma" element={<Qomolangma/>}/>
-          <Route path="Hashtag" element={<Hashtag/>}/>
+          <Route path="womb-envy" 
+                 element={
+                  <PoesyContainer 
+                    poesy={<WombEnvy/>}
+                  />}
+          />
+          <Route path="qomolangma"
+                  element={
+                  <PoesyContainer 
+                    poesy={<Qomolangma/>}
+                  />}
+          />
+          <Route path="hashtag"
+                  element={
+                  <PoesyContainer 
+                    poesy={<Hashtag/>}
+                  />}
+          />
           <Route path="*" element={<div>not found</div> }/>
       </Routes>
 
     </BrowserRouter>
   );
+}
+
+function PoesyContainer({poesy}){
+  return <>
+    <Header/>
+    {poesy}
+  </>
 }
