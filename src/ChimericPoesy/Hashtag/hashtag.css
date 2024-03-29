@@ -26,3 +26,48 @@
 .fading-text.active {
   opacity: 1;
 }
+/* 
+@keyframes rotateAnimation {
+  from {
+      transform: rotate(350deg);
+  }
+  to {
+      transform: rotate(160deg);
+  }
+}
+
+@keyframes reverseRotateAnimation {
+  from {
+      transform: rotate(160deg);
+  }
+  to {
+      transform: rotate(350deg);
+  }
+} */
+
+
+.active .upside-down {
+  
+  /* animation: rotateAnimation 500ms; */
+}
+
+.upside-down {
+  transform: rotate(160deg);
+}
+
+.active .right-side-up {
+  /* animation: reverseRotateAnimation 500ms; */
+}
+
+.right-side-up {
+  transform: rotate(-10deg);
+}
+
+.animated-4 {
+  height: 30px;
+}
+
+.stretched-H {
+  transform: scale(2);
+}
+

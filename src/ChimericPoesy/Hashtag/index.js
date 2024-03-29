@@ -1,9 +1,23 @@
 import "./hashtag.css";
 import MetaText from "../MetaText.js";
+import four from "./4.png"
+import h from "./H.png"
 
 export default function App() {
   const interval = 1000; // Transition interval in milliseconds
 
+
+  const replaceRule = (char) => {
+    if(char === "h"){
+      return <img className="animated-4 upside-down" src={four}/>
+    } else if(char === "4"){
+      return <img className="animated-4 right-side-up" src={four}/>
+    } else if(char === "H"){
+      return <img style={{height: "32px"}}src={h}/>
+    } else {
+      return char
+    }
+  }
   return (
     <div
       className="hashtag-poesy-container"
@@ -15,7 +29,41 @@ export default function App() {
     >
       <MetaText interval={interval} texts={[""]} />
       <MetaText interval={interval} texts={[""]} />
-      <MetaText interval={interval} texts={["hash tag, you're (r)itt(c)hh"]} />
+      <MetaText replaceRule={replaceRule}
+              isRepeating={false}
+              interval={4000}
+              texts={[
+                "hash tag, you're rich4", 
+                // "4as4 tag, you're ric44",
+                "hash tag, you're itch4",
+                "hash tag, you're it  4",
+                // "hash tag, you'rehatt-y",
+                // "hash tag, you'rehaH-y",
+                // "hash tag, you'reHabby",
+                "hash tag, you'reHabit",
+                // "4as4 tag, you  Habitu",
+                // "4as4 tag, you Habitua",
+                "hash tag, youHabitual",
+                "hash tag, youHabitual",
+                "hash tag,youHabituali",
+                "hash tagyouHabitualize",
+                "hash tagyouHabitualize",
+                "the warsyouHabitualize",
+                "the warsyouHabitualize",
+                "thewardsyouHabitualize",
+                "thewardsyouHabitualize",
+                "thewordsyouHabitualize",
+                "thewordsyouHabitualize",
+                "thswordsyouHabitualize",
+                "thswordsyouHabitualize",
+                "hw orldsyouHabitualize",
+                "or you Habitualize war",
+                "or you Habitualize end",
+                "or y u Habitualize e d",
+                "or y u Ha itualize e d",
+                "or y u Ha itch iye e d",
+                "or y u Ha itch eye e d",
+              ]} />
       <MetaText interval={interval} texts={[""]} />
       <MetaText interval={interval} texts={[""]} />
       <MetaText
@@ -28,7 +76,6 @@ export default function App() {
           "#",
           "#",
           "#",
-          "H",
           "#",
           "#",
           "#",
@@ -36,23 +83,7 @@ export default function App() {
           "#",
           "#",
           "#",
-          "h",
-          "#",
-          "#",
-          "#",
-          "#",
-          "#",
-          "#",
-          "#",
-          "4",
-          "#",
-          "#",
-          "#",
-          "#",
-          "#",
-          "#",
-          "#",
-          "F",
+          
         ]}
       />
       <MetaText
