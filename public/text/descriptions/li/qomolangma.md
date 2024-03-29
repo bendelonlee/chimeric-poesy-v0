@@ -1,0 +1,9 @@
+When I wrote Qomolangma, I was thinking a lot about the difference between how humans and computers think, and about John Maeda’s meditation on the subject: How to Speak Machine. The moment of inspiration came when reading a social media post of his, in which he shared how difficult autocorrect was being for his mother. In the post, his mother texted him the word: Qomolangma. I still don’t know if she intended this, if it was autocorrect, or if perhaps she was using the veil of autocorrect difficulties to send a coded message of some kind. From this distance, it’s impossible to say. I really liked discovering the word Qomolangma, and when I searched for it, I really enjoyed discovering the phenomenon of Tibet’s iridescent clouds. It shed a new light on the “rainbow bodies” in Tibetan texts that I had read, in reference to ascended masters in the religion. I wanted to fit all that into the poesy.
+
+RF Kuang has been influential author for me this past year. I'll give here a shout out to her book Babel, and I feel a certain resonance between that work and this. She's definitely up to something interesting.
+
+Sometimes you see saints with a lemniscate or infinity symbol over their head in sacred art. You also can see this quite a bit in the Tarot. Do the gifs I put over Qomolangma look more like a lemniscate or more like a staircase?
+
+Truly, Mount Q is too high to have a such a halo in real life. There just isn't the atmostphere to support it. I hope to provide some consolation.
+
+Lastly, Norm, the Nyigma teacher who used to run a Tibetan Buddhism group in the upstairs of the Mercury Cafe every week before COVID, if you ever happen to see this: OM MANI PADME HUM!
