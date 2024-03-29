@@ -1,6 +1,7 @@
 import "./styles.css";
 import MetaText from "../MetaText.js";
 import CountdownTimer from "./CountdownTimer";
+import cloud from './cloud.gif'
 
 export default function Qomolangma() {
   const interval = 15000; // Transition interval in milliseconds
@@ -17,26 +18,33 @@ export default function Qomolangma() {
         gap: "54px",
       }}
     >
+      <div className="halo-container">
+        <div className="halo-container-inner">
+          <img className="cloud left" src={cloud} alt="cloud halo"/>
+          <img className="cloud right" src={cloud} alt="cloud halo"/>
+        </div>
+
+      </div>
       <MetaText isRepeating={false} interval={(interval / 5)} texts={
         [
-          "name  the tallest mountain", 
-          "name  the tallest mountain", 
-          "name  the tallest mountain",
-          "name  the tallest mountain",
-          "babel the tallest mountain",
-          "name  the tallest mountain",
-          "name  the tallest mountain",
-          "name  the tallest mountain",
-          "oxfordthe tallest mountain",
-          "name  the tallest mountain",
-          "name  the tallest mountain",
-          "name  the tallest mountain",
-          "name  the tallest mountain",
-          "Nyigmathe tallest mountain",
-          "name  the tallest mountain",
-          "east  the tallest mountain",
-          "name  the tallest mountain",
-          "name: the tallest mountain",
+          "name   the tallest mountain", 
+          "name   the tallest mountain", 
+          "name   the tallest mountain",
+          "name   the tallest mountain",
+          "babel  the tallest mountain",
+          "name   the tallest mountain",
+          "name   the tallest mountain",
+          "name   the tallest mountain",
+          "oxford the tallest mountain",
+          "name   the tallest mountain",
+          "name   the tallest mountain",
+          "name   the tallest mountain",
+          "name   the tallest mountain",
+          "Nyigma the tallest mountain",
+          "name   the tallest mountain",
+          "east   the tallest mountain",
+          "name   the tallest mountain",
+          "name:  the tallest mountain",
         ]} />
       <MetaText isRepeating={false} interval={interval} texts={[""]} />
       <MetaText isRepeating={false} interval={interval} texts={["", "", "", "Q"]} />
@@ -49,98 +57,6 @@ export default function Qomolangma() {
       />
       <MetaText isRepeating={false} interval={interval} texts={[""]} />
       <CountdownTimer />
-      {/* <MetaText
-        interval={3000}
-        texts={[
-          "",
-          "",
-          "magma",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "sorry for mumbling",
-          "sorry for magmaing",
-          "sorry for magaling",
-          "sorry for mumbling",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "look ma, no google",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "this is some strange elevator chatter",
-          "magmacumme laudely",
-          "softly, please",
-          "sh!!!",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "magma",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "softly for mumbling",
-          "softly for magmaing",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "look ma, no google",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "this is some strange elevator chatter",
-          "magmacumme laudely",
-          "softly, please",
-          "sh!!!",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "never: say you're sorry",
-          "always say you're softly",
-          // "my ultimately goal:",
-          // "to convince the world",
-          // "that I wrote the radio sketches",
-          // "for sim copter (1996) by maxis",
-        ]}
-      /> */}
     </div>
   );
 }

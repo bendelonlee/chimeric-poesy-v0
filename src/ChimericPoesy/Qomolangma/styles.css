@@ -25,3 +25,22 @@
 .fading-text.active {
   opacity: 1;
 }
+.halo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.cloud.left {
+  position: relative;
+  top: 12px;
+  transform: rotate(180deg);
+}
+.cloud.right {
+  position: relative;
+  bottom: 12px;
+}
+
+.halo-container-inner {
+  position: absolute;
+  top: 90px;
+}
