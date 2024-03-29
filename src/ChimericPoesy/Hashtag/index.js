@@ -16,17 +16,17 @@ export default function Hashtag() {
 
   const replaceRule = (char) => {
     if(char === "h"){
-      return <img className="hashtag-letter" src={hLower}/>
+      return <img className="hashtag-letter" src={hLower} alt="h"/>
     } else if(char === "4"){
-      return <img className="hashtag-letter" src={four}/>
+      return <img className="hashtag-letter" src={four} alt="4"/>
     } else if(char === "#"){
-      return <img className="hashtag-letter" src={hashTag}/>
+      return <img className="hashtag-letter" src={hashTag} alt="#"/>
     } else if(char === "f"){
-      return <img className="hashtag-letter" src={fUpper}/>
+      return <img className="hashtag-letter" src={fUpper} alt="f"/>
     } else if(char === "T"){
-      return <img className="hashtag-letter" src={ttLower}/>
+      return <img className="hashtag-letter" src={ttLower} alt="T"/>
     } else if(char === "H"){
-      return <img className="hashtag-letter" src={hUpper}/>
+      return <img className="hashtag-letter" src={hUpper} alt="H"/>
     } else {
       return char
     }
