@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const MetaText = ({ texts, interval, isRepeating = true }) => {
+const MetaText = ({ closingText, texts, interval, isRepeating = true, replaceRule }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const createMarkup = (text) => {
@@ -25,14 +25,34 @@ const MetaText = ({ texts, interval, isRepeating = true }) => {
     return () => clearInterval(intervalId);
   }, [texts, interval, isRepeating]);
 
+  const replacedText = (text) => {
+    return <span>
+      {text.split('').map((t) => {
+        return replaceRule(t);
+      })}
+    </span>
+  }
+
+  const textProps = (text, index) => {
+    const baseProps = {
+      key: index,
+      className: `fading-text ${index === currentIndex ? "active" : ""}`,
+    }
+    if(replaceRule){
+      return baseProps
+    } else {
+      return {
+        ...baseProps,
+        dangerouslySetInnerHTML: createMarkup(text),
+      }
+    }
+  }
   return (
     <div className="fading-text-container">
       {texts.map((text, index) => (
         <div
-          key={index}
-          className={`fading-text ${index === currentIndex ? "active" : ""}`}
-          dangerouslySetInnerHTML={createMarkup(text)}
-        ></div>
+          {...textProps(text, index)}
+        >{replaceRule && replacedText(text)}</div>
       ))}
     </div>
   );
