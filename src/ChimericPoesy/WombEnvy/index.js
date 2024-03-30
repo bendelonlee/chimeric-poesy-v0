@@ -1,10 +1,13 @@
 import "./styles.css";
 import MetaText from "../MetaText.js";
 import {useSearchParams} from "react-router-dom";
-import {reverseString} from "../../helpers.js"
+import {reverseString} from "../../helpers/reverseString.js"
+import {useSession} from "../../hooks/useSession.js"
 
 export default function WombEnvy() {
   const [searchParams, ] = useSearchParams();
+
+  useSession("wombenvy")
 
   const interval = 3000; // Transition interval in milliseconds
 // Copyright 2024 Benjamin Delon Lee / Li Delon Jacobsyn

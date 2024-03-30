@@ -4,7 +4,11 @@ import Markdown from 'https://esm.sh/react-markdown@9'
 
 import { useEffect, useState } from "react"
 
+import { useSession } from "../hooks/useSession"
+
 export default function ChimericPoesy({ children }){
+  useSession("index")
+
   const [searchParams, ] = useSearchParams();
 
   useEffect(() => {
@@ -15,7 +19,7 @@ export default function ChimericPoesy({ children }){
   }, []);
 
   const [descriptions, setDescriptions] = useState({})
-
+  
 
   function fetchLiDescription(textName){
     fetch(`text/descriptions/li/${textName}.md`)
@@ -58,15 +62,19 @@ export default function ChimericPoesy({ children }){
               {
                 path: "https://www.instagram.com/reel/C4qD0u7rMFu/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==",
                 name: "saboteurcity",
+                external: true,
                 // description: description
               },
               {
                 path: "https://www.instagram.com/reel/C4vfJyPMoC4/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
                 name: "newstory",
+                external: true,
               },
               {
                 path: "https://www.instagram.com/reel/C41IL1ast1F/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-                name: "notcypress"
+                name: "notcypress",
+                external: true,
+
               }
             ]}
           />}
@@ -123,16 +131,23 @@ function Poesy({poesy, i}){
       }
     })
   }
+  const linkProps = {
+    style: linkStyles,
+    key: poesy.name,
+  }
+
+  if(poesy.external){
+    linkProps.to = poesy.path
+  } else {
+    linkProps.to = {
+      pathname: poesy.path,
+      search: poesy.search,
+    }
+  }
   // console.log("description", poesy.description)
   return <div className="poesy-in-index">
     <Link
-      style={linkStyles}
-      key={poesy.name}
-      onClick={poesy.onClick}
-      to={{
-        pathname: poesy.path,
-        search: poesy.search,
-      }}
+      {...linkProps}
       >
       {i}. {poesy.name}
     </Link>

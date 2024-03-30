@@ -7,9 +7,11 @@ import hLower from "./hashtag-h-lower.png"
 import hashTag from "./hash1.png"
 import ttLower from "./hashtag-tt.png"
 import { useSearchParams } from "react-router-dom";
-
+import {useSession} from "../../hooks/useSession.js"
 
 export default function Hashtag() {
+  useSession("hashtag")
+
   const interval = 1000; // Transition interval in milliseconds
   const [searchParams, ] = useSearchParams();
   searchParams.get("p")

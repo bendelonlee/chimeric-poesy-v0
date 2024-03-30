@@ -2,8 +2,11 @@ import "./styles.css";
 import MetaText from "../MetaText.js";
 import CountdownTimer from "./CountdownTimer";
 import cloud from './cloud.gif'
+import {useSession} from "../../hooks/useSession.js"
 
 export default function Qomolangma() {
+  useSession("qomolangma")
+
   const interval = 15000; // Transition interval in milliseconds
   // console.log("search", window.location.search);
   // const searchParams = new URLSearchParams(window.location.search);
