@@ -41,7 +41,7 @@ function schedulePing(id) {
   }
 
 function ping(id){
-    fetch(`${env.BACKEND}/api/v1/sessions/${id}`, {
+    fetch(`${process.env.BACKEND}/api/v1/sessions/${id}`, {
         method: "PUT",
         headers: {
             "Content-type": "application/json; charset=UTF-8"
