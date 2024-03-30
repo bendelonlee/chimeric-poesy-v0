@@ -8,7 +8,8 @@ export function useSession(pagename) {
 
 
 export function onLoad(pagename){
-    fetch(`${process.env.BACKEND}/api/v1/sessions`, {
+    console.log("process.env", process.env)
+    fetch(`${process.env.REACT_APP_BACKEND}/api/v1/sessions`, {
         method: "POST",
         body: JSON.stringify({
             site_name: "chimeric-poesy.com",
@@ -41,7 +42,7 @@ function schedulePing(id) {
   }
 
 function ping(id){
-    fetch(`${process.env.BACKEND}/api/v1/sessions/${id}`, {
+    fetch(`${process.env.REACT_APP_BACKEND}/api/v1/sessions/${id}`, {
         method: "PUT",
         headers: {
             "Content-type": "application/json; charset=UTF-8"
