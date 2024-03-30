@@ -3,12 +3,11 @@ import { useEffect } from "react"
 export function useSession(pagename) {
     useEffect(() => {
         onLoad(pagename)
-    },[])
+    },[pagename])
 }
 
 
 export function onLoad(pagename){
-    // console.log(navigator)
     fetch("http://localhost:3000/api/v1/sessions", {
         method: "POST",
         body: JSON.stringify({
@@ -42,7 +41,6 @@ function schedulePing(id) {
   }
 
 function ping(id){
-    console.log('ping')
     fetch(`http://localhost:3000/api/v1/sessions/${id}`, {
         method: "PUT",
         headers: {

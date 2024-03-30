@@ -123,7 +123,6 @@ function Poesy({poesy, i}){
 
   const toggleDescriptionCssClass = () => {
     setDescriptionCssClass((d) => {
-      console.log('d', d)
       if(d === "closed-description"){
         return "open-description"
       } else {
@@ -144,8 +143,8 @@ function Poesy({poesy, i}){
       search: poesy.search,
     }
   }
-  // console.log("description", poesy.description)
-  return <div className="poesy-in-index">
+
+return <div className="poesy-in-index">
     <Link
       {...linkProps}
       >

@@ -8,9 +8,6 @@ export default function Qomolangma() {
   useSession("qomolangma")
 
   const interval = 15000; // Transition interval in milliseconds
-  // console.log("search", window.location.search);
-  // const searchParams = new URLSearchParams(window.location.search);
-  // console.log(searchParams.get("annotate"));
   return (
     <div
       className="q-poesy-container"
