@@ -8,7 +8,7 @@ export function useSession(pagename) {
 
 
 export function onLoad(pagename){
-    fetch("http://localhost:3000/api/v1/sessions", {
+    fetch(`${process.env.BACKEND}/api/v1/sessions`, {
         method: "POST",
         body: JSON.stringify({
             site_name: "chimeric-poesy.com",
@@ -41,7 +41,7 @@ function schedulePing(id) {
   }
 
 function ping(id){
-    fetch(`http://localhost:3000/api/v1/sessions/${id}`, {
+    fetch(`${env.BACKEND}/api/v1/sessions/${id}`, {
         method: "PUT",
         headers: {
             "Content-type": "application/json; charset=UTF-8"
