@@ -8,7 +8,7 @@ export function useSession(pagename) {
 }
 
 function localUserId(){
-    str = localStorage.getItem("userId")
+    const str = localStorage.getItem("userId")
     if(str === "undefined") return undefined
     return str
 }
