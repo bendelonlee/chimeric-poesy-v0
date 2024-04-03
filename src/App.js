@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ChimericPoesy from "./ChimericPoesy"
 import WombEnvy from "./ChimericPoesy/WombEnvy"
+import KnockOnJin3000 from "./ChimericPoesy/KnockOnJin3000"
 import Qomolangma from "./ChimericPoesy/Qomolangma"
 import Hashtag from "./ChimericPoesy/Hashtag"
 import Header from "./Header"
@@ -27,6 +28,12 @@ export default function App() {
                   element={
                   <PoesyContainer 
                     poesy={<Hashtag/>}
+                  />}
+          />
+           <Route path="knock-on-jin"
+                  element={
+                  <PoesyContainer 
+                    poesy={<KnockOnJin3000/>}
                   />}
           />
           <Route path="*" element={<div>not found</div> }/>
