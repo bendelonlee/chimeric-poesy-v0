@@ -1,17 +1,17 @@
-import { useEffect } from "react"
+import { useEffect, useRef } from "react"
+import { backend_url } from "../helpers/server"
 
 export function useSession(pagename) {
     useEffect(() => {
-        onLoad(pagename)
+        pagename && onLoad(pagename)
     },[pagename])
 }
 
-
 export function onLoad(pagename){
-    console.log("process.env", process.env)
-    fetch(`${process.env.REACT_APP_BACKEND}/api/v1/sessions`, {
+    fetch(`${backend_url()}/api/v1/sessions`, {
         method: "POST",
         body: JSON.stringify({
+            user_id: localStorage.getItem("userId"),
             site_name: "chimeric-poesy.com",
             page_name: pagename,
             user_agent: navigator["userAgent"],
@@ -21,9 +21,10 @@ export function onLoad(pagename){
             "Content-type": "application/json; charset=UTF-8"
         }
     }).then(response => response.json())
-        .then(data => 
-            schedulePing(data.id)
-        )
+        .then(data => {
+            localStorage.setItem("userId", data.user_id)
+            schedulePing(data.session_id)
+        })
         .catch(error => console.log("onLoad error: ", error));
 }
 
@@ -39,10 +40,10 @@ function schedulePing(id) {
   
     // Initial call
     setTimeout(recursiveCall, delay);
-  }
+}
 
 function ping(id){
-    fetch(`${process.env.REACT_APP_BACKEND}/api/v1/sessions/${id}`, {
+    fetch(`${backend_url()}/api/v1/sessions/${id}`, {
         method: "PUT",
         headers: {
             "Content-type": "application/json; charset=UTF-8"
