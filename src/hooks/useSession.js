@@ -7,11 +7,17 @@ export function useSession(pagename) {
     },[pagename])
 }
 
+function localUserId(){
+    str = localStorage.getItem("userId")
+    if(str === "undefined") return undefined
+    return str
+}
+
 export function onLoad(pagename){
     fetch(`${backend_url()}/api/v1/sessions`, {
         method: "POST",
         body: JSON.stringify({
-            user_id: localStorage.getItem("userId"),
+            user_id: localUserId(),
             site_name: "chimeric-poesy.com",
             page_name: pagename,
             user_agent: navigator["userAgent"],
