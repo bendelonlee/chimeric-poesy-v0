@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 const MetaText = ({ onFinish, texts, interval, isRepeating = true, replaceRule, isFrozen, endElement, isPlaying }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -30,7 +30,7 @@ const MetaText = ({ onFinish, texts, interval, isRepeating = true, replaceRule, 
     }, interval);
 
     return () => clearInterval(intervalId);
-  }, [texts, interval, isRepeating, isFrozen, isPlaying]);
+  }, [texts, interval, isRepeating, isFrozen, isPlaying, onFinish]);
 
   const replacedText = (text) => {
     return <span>

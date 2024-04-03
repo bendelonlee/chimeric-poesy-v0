@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import { useEffect } from "react"
 import { backend_url } from "../helpers/server"
 
 export function useSession(pagename) {
