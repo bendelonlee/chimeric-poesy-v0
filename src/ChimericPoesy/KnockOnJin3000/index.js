@@ -6,7 +6,7 @@ import {useSession} from "../../hooks/useSession.js"
 export default function KnockOnJin() {
   useSession("knockonjin")
 
-  const [replayCount, setReplayCount] = useState(1);
+  const [replayCount, setReplayCount] = useState(0);
 
   function presenter(){
     if (replayCount === 0){
